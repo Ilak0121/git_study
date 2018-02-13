@@ -1,8 +1,0 @@
-syntax on
-filetype indent plugin on
-set bg=dark
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-set nu
