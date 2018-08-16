@@ -1,0 +1,2 @@
+alias shut='shutdown -h now'
+export PS1="[\[\e[36m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\[\e[32m\]\W\[\e[m\]]\[\e[42m\]\\$\[\e[m\] "
