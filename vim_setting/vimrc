@@ -1,0 +1,35 @@
+set encoding=utf-8
+
+autocmd VimEnter * NERDTree
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+set number
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'The-NERD-tree'
+Plugin 'bling/vim-airline'
+Plugin 'sickill/vim-monokai'
+Plugin 'tpope/vim-fugitive'
+
+call vundle#end()
+filetype plugin indent on
+
+let g:airline_powerline_fonts=1
+
+syntax enable
+colorscheme monokai
+map <F3> :NERDTreeToggle<cr>
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
