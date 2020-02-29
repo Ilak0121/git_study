@@ -1,4 +1,7 @@
-<h1>for_study</h1>
+# setting for vim
 
-<strong>This repository is for learning git and saving some setting files.</strong>
-
+### setting:
+- NERD-tree with on/off with <F3>
+- colorscheme: monokai
+- vim-fugitive
+- vim-airline
