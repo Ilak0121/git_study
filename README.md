@@ -1,7 +1,10 @@
-# setting for vim
+# Simple Setting
+> this is the personal repository for simple setting
 
-### setting:
-- NERD-tree with on/off with <F3>
-- colorscheme: monokai
-- vim-fugitive
-- vim-airline
+** Vim setting **
+- NERDTree
+- airline
+- code syntax highlight inclusing solidity
+- font monokai
+
+

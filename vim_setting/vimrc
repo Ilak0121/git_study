@@ -1,6 +1,6 @@
 set encoding=utf-8
 
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree "Nerdtree automatically open
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 set number
@@ -19,6 +19,7 @@ Plugin 'The-NERD-tree'
 Plugin 'bling/vim-airline'
 Plugin 'sickill/vim-monokai'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tomlion/vim-solidity'
 
 call vundle#end()
 filetype plugin indent on
